@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import type { User } from '@supabase/supabase-js'
 import { createClient } from '@/lib/supabase/client'
 import { calculatePayout, formatCurrency } from '@/lib/gig'
 
@@ -37,7 +38,7 @@ const STORAGE_KEY = 'student-gig-app-state-v1'
 
 export default function StudentGigApp() {
   const supabase = useMemo(() => createClient(), [])
-  const [sessionUser, setSessionUser] = useState<any>(null)
+  const [sessionUser, setSessionUser] = useState<User | null>(null)
   const [authMode, setAuthMode] = useState<AuthMode>('signup')
   const [authForm, setAuthForm] = useState<AuthForm>({
     email: '',
@@ -50,26 +51,23 @@ export default function StudentGigApp() {
     price: '',
     description: '',
   })
-  const [gigs, setGigs] = useState<Gig[]>([])
-  const [loading, setLoading] = useState(false)
-  const [message, setMessage] = useState<string | null>(null)
-  const [hydrated, setHydrated] = useState(false)
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-
+  const [gigs, setGigs] = useState<Gig[]>(() => {
+    if (typeof window === 'undefined') return []
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY)
       if (stored) {
         const parsed = JSON.parse(stored)
-        if (Array.isArray(parsed?.gigs)) {
-          setGigs(parsed.gigs)
-        }
+        if (Array.isArray(parsed?.gigs)) return parsed.gigs
       }
     } catch {
       // Ignore malformed storage data.
     }
+    return []
+  })
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState<string | null>(null)
 
+  useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
       setSessionUser(data.session?.user ?? null)
     })
@@ -78,17 +76,15 @@ export default function StudentGigApp() {
       setSessionUser(session?.user ?? null)
     })
 
-    setHydrated(true)
-
     return () => {
       authListener.subscription.unsubscribe()
     }
   }, [supabase])
 
   useEffect(() => {
-    if (!hydrated || typeof window === 'undefined') return
+    if (typeof window === 'undefined') return
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ gigs }))
-  }, [gigs, hydrated])
+  }, [gigs])
 
   const summary = useMemo(() => {
     const completedGigs = gigs.filter((gig) => gig.status === 'completed')
