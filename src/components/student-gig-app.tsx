@@ -213,16 +213,16 @@ export default function StudentGigApp() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#1f2937,_#030712_70%)] px-4 py-10 text-slate-100">
       <div className="mx-auto flex max-w-7xl flex-col gap-6">
-        <section className="rounded-3xl border border-white/10 bg-slate-950/80 p-8 shadow-2xl shadow-black/30 backdrop-blur">
+        <section className=" -3xl border border-white/10 bg-slate-950/80 p-8 shadow-2xl shadow-black/30 backdrop-blur">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-emerald-400">Student Gig Platform</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-400">Student Gig Platform</p>
               <h1 className="mt-2 text-4xl font-semibold sm:text-5xl">Post, accept, and complete gigs in one place.</h1>
               <p className="mt-4 text-lg text-slate-300">
                 Students can log in, pick up work from providers, and earn money while the platform takes a small commission.
               </p>
             </div>
-            <div className="rounded-2xl border border-emerald-400/20 bg-emerald-500/10 px-5 py-4 text-sm text-emerald-200">
+            <div className=" -2xl border border-amber-400/20 bg-amber-500/10 px-5 py-4 text-sm text-amber-200">
               <p className="font-semibold">Current payout logic</p>
               <p className="mt-1">15% platform commission, 85% student payout.</p>
             </div>
@@ -230,7 +230,7 @@ export default function StudentGigApp() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
+          <div className=" -3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-semibold">Access your workspace</h2>
@@ -240,7 +240,7 @@ export default function StudentGigApp() {
                 <button
                   type="button"
                   onClick={handleSignOut}
-                  className="rounded-full border border-slate-700 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-400 hover:text-emerald-300"
+                  className=" -full border border-slate-700 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-amber-400 hover:text-amber-300"
                 >
                   Sign out
                 </button>
@@ -248,38 +248,38 @@ export default function StudentGigApp() {
             </div>
 
             <form className="mt-6 space-y-4" onSubmit={handleAuth}>
-              <div className="flex gap-2 rounded-full border border-white/10 p-1">
+              <div className="flex gap-2  -full border border-white/10 p-1">
                 <button
                   type="button"
                   onClick={() => setAuthMode('signup')}
-                  className={`flex-1 rounded-full px-3 py-2 text-sm font-medium transition ${authMode === 'signup' ? 'bg-emerald-500 text-slate-950' : 'text-slate-300'}`}
+                  className={`flex-1  -full px-3 py-2 text-sm font-medium transition ${authMode === 'signup' ? 'bg-amber-500 text-slate-950' : 'text-slate-300'}`}
                 >
                   Create account
                 </button>
                 <button
                   type="button"
                   onClick={() => setAuthMode('signin')}
-                  className={`flex-1 rounded-full px-3 py-2 text-sm font-medium transition ${authMode === 'signin' ? 'bg-emerald-500 text-slate-950' : 'text-slate-300'}`}
+                  className={`flex-1  -full px-3 py-2 text-sm font-medium transition ${authMode === 'signin' ? 'bg-amber-500 text-slate-950' : 'text-slate-300'}`}
                 >
                   Sign in
                 </button>
               </div>
 
               <input
-                className="w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none ring-0"
+                className="w-full  -2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none ring-0"
                 placeholder="Your name"
                 value={authForm.name}
                 onChange={(event) => setAuthForm((current) => ({ ...current, name: event.target.value }))}
               />
               <input
-                className="w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none ring-0"
+                className="w-full  -2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none ring-0"
                 type="email"
                 placeholder="Email"
                 value={authForm.email}
                 onChange={(event) => setAuthForm((current) => ({ ...current, email: event.target.value }))}
               />
               <input
-                className="w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none ring-0"
+                className="w-full  -2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none ring-0"
                 type="password"
                 placeholder="Password"
                 value={authForm.password}
@@ -287,7 +287,7 @@ export default function StudentGigApp() {
               />
 
               <select
-                className="w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none"
+                className="w-full  -2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none"
                 value={authForm.role}
                 onChange={(event) => setAuthForm((current) => ({ ...current, role: event.target.value as UserRole }))}
               >
@@ -298,29 +298,29 @@ export default function StudentGigApp() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-2xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-70"
+                className="w-full  -2xl bg-amber-500 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {loading ? 'Working...' : authMode === 'signup' ? 'Create account' : 'Sign in'}
               </button>
             </form>
 
-            {message ? <p className="mt-4 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">{message}</p> : null}
+            {message ? <p className="mt-4  -2xl border border-amber-400/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">{message}</p> : null}
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
+          <div className=" -3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
             <h2 className="text-xl font-semibold">Live payout summary</h2>
             <p className="mt-1 text-sm text-slate-400">Completed gigs are instantly broken into student payout and platform commission.</p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+              <div className=" -2xl border border-white/10 bg-slate-900/70 p-4">
                 <p className="text-sm text-slate-400">Completed</p>
                 <p className="mt-2 text-2xl font-semibold">{summary.completedCount}</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+              <div className=" -2xl border border-white/10 bg-slate-900/70 p-4">
                 <p className="text-sm text-slate-400">Platform fee</p>
                 <p className="mt-2 text-2xl font-semibold">{formatCurrency(summary.totalPlatformFees)}</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+              <div className=" -2xl border border-white/10 bg-slate-900/70 p-4">
                 <p className="text-sm text-slate-400">Student payout</p>
                 <p className="mt-2 text-2xl font-semibold">{formatCurrency(summary.totalStudentPayout)}</p>
               </div>
@@ -329,26 +329,26 @@ export default function StudentGigApp() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-          <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
+          <div className=" -3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-semibold">Create a gig</h2>
                 <p className="mt-1 text-sm text-slate-400">Providers can publish work with a set price and description.</p>
               </div>
-              <span className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">
+              <span className=" -full border border-amber-400/20 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-amber-300">
                 Provider flow
               </span>
             </div>
 
             <form className="mt-6 space-y-4" onSubmit={handleCreateGig}>
               <input
-                className="w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none"
+                className="w-full  -2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none"
                 placeholder="Gig name"
                 value={gigForm.title}
                 onChange={(event) => setGigForm((current) => ({ ...current, title: event.target.value }))}
               />
               <input
-                className="w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none"
+                className="w-full  -2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none"
                 type="number"
                 min="0"
                 step="0.01"
@@ -357,45 +357,45 @@ export default function StudentGigApp() {
                 onChange={(event) => setGigForm((current) => ({ ...current, price: event.target.value }))}
               />
               <textarea
-                className="min-h-28 w-full rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none"
+                className="min-h-28 w-full  -2xl border border-white/10 bg-slate-900/80 px-4 py-3 text-sm outline-none"
                 placeholder="Describe the work"
                 value={gigForm.description}
                 onChange={(event) => setGigForm((current) => ({ ...current, description: event.target.value }))}
               />
               <button
                 type="submit"
-                className="w-full rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
+                className="w-full  -2xl bg-white px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
               >
                 Publish gig
               </button>
             </form>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
+          <div className=" -3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-semibold">Open gigs</h2>
                 <p className="mt-1 text-sm text-slate-400">Students can claim available work and complete it when finished.</p>
               </div>
-              <span className="rounded-full border border-sky-400/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-sky-300">
+              <span className=" -full border border-sky-400/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-sky-300">
                 Student flow
               </span>
             </div>
 
             <div className="mt-6 space-y-4">
               {availableGigs.length === 0 ? (
-                <div className="rounded-2xl border border-dashed border-white/10 bg-slate-900/60 p-6 text-center text-sm text-slate-400">
+                <div className=" -2xl border border-dashed border-white/10 bg-slate-900/60 p-6 text-center text-sm text-slate-400">
                   No gigs are currently available. Providers can publish one above.
                 </div>
               ) : (
                 availableGigs.map((gig) => (
-                  <article key={gig.id} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+                  <article key={gig.id} className=" -2xl border border-white/10 bg-slate-900/70 p-4">
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <h3 className="font-semibold">{gig.title}</h3>
                         <p className="mt-1 text-sm text-slate-400">{gig.description}</p>
                       </div>
-                      <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-300">
+                      <span className=" -full bg-amber-500/10 px-3 py-1 text-sm font-semibold text-amber-300">
                         {formatCurrency(gig.price)}
                       </span>
                     </div>
@@ -404,7 +404,7 @@ export default function StudentGigApp() {
                       <button
                         type="button"
                         onClick={() => acceptGig(gig.id)}
-                        className="rounded-full border border-slate-700 px-3 py-1.5 font-medium text-slate-200 transition hover:border-emerald-400 hover:text-emerald-300"
+                        className=" -full border border-slate-700 px-3 py-1.5 font-medium text-slate-200 transition hover:border-amber-400 hover:text-amber-300"
                       >
                         Accept gig
                       </button>
@@ -417,31 +417,31 @@ export default function StudentGigApp() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-          <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
+          <div className=" -3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
             <h2 className="text-xl font-semibold">My accepted work</h2>
             <p className="mt-1 text-sm text-slate-400">Students can mark their assigned work as complete.</p>
 
             <div className="mt-6 space-y-4">
               {myAcceptedGigs.length === 0 ? (
-                <div className="rounded-2xl border border-dashed border-white/10 bg-slate-900/60 p-6 text-center text-sm text-slate-400">
+                <div className=" -2xl border border-dashed border-white/10 bg-slate-900/60 p-6 text-center text-sm text-slate-400">
                   No gigs are currently assigned to you.
                 </div>
               ) : (
                 myAcceptedGigs.map((gig) => (
-                  <article key={gig.id} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+                  <article key={gig.id} className=" -2xl border border-white/10 bg-slate-900/70 p-4">
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <h3 className="font-semibold">{gig.title}</h3>
                         <p className="mt-1 text-sm text-slate-400">{gig.description}</p>
                       </div>
-                      <span className="rounded-full bg-sky-500/10 px-3 py-1 text-sm font-semibold text-sky-300">Accepted</span>
+                      <span className=" -full bg-sky-500/10 px-3 py-1 text-sm font-semibold text-sky-300">Accepted</span>
                     </div>
                     <div className="mt-3 flex items-center justify-between text-sm text-slate-400">
                       <span>Will pay {formatCurrency(calculatePayout(gig.price).studentAmount)} after completion</span>
                       <button
                         type="button"
                         onClick={() => completeGig(gig.id)}
-                        className="rounded-full border border-slate-700 px-3 py-1.5 font-medium text-slate-200 transition hover:border-emerald-400 hover:text-emerald-300"
+                        className=" -full border border-slate-700 px-3 py-1.5 font-medium text-slate-200 transition hover:border-amber-400 hover:text-amber-300"
                       >
                         Mark complete
                       </button>
@@ -452,24 +452,24 @@ export default function StudentGigApp() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
+          <div className=" -3xl border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
             <h2 className="text-xl font-semibold">Provider dashboard</h2>
             <p className="mt-1 text-sm text-slate-400">Track the gigs you have published and watch them move through the pipeline.</p>
 
             <div className="mt-6 space-y-4">
               {providerGigs.length === 0 ? (
-                <div className="rounded-2xl border border-dashed border-white/10 bg-slate-900/60 p-6 text-center text-sm text-slate-400">
+                <div className=" -2xl border border-dashed border-white/10 bg-slate-900/60 p-6 text-center text-sm text-slate-400">
                   You have not published any gigs yet.
                 </div>
               ) : (
                 providerGigs.map((gig) => (
-                  <article key={gig.id} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+                  <article key={gig.id} className=" -2xl border border-white/10 bg-slate-900/70 p-4">
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <h3 className="font-semibold">{gig.title}</h3>
                         <p className="mt-1 text-sm text-slate-400">{gig.description}</p>
                       </div>
-                      <span className={`rounded-full px-3 py-1 text-sm font-semibold ${gig.status === 'completed' ? 'bg-emerald-500/10 text-emerald-300' : 'bg-amber-500/10 text-amber-300'}`}>
+                      <span className={` -full px-3 py-1 text-sm font-semibold ${gig.status === 'completed' ? 'bg-amber-500/10 text-amber-300' : 'bg-amber-500/10 text-amber-300'}`}>
                         {gig.status}
                       </span>
                     </div>
